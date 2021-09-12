@@ -2,10 +2,10 @@
  A Peer-to-Peer application where peer processes can communicate via sockets
  
 
-                                                                Design
+                                                           Design
 As far as designing aspect goes, we kept it simple. We followed the same design as the one in the demo except for a few tweaks here and there. For the database we went with a 2D array. To make it easier on we, made each user take an indexing of 3. That way we would be able to fit the name, Ip address and port. We also used if statements inside the for loop for the client and server.  We tried going with python at first and looked at the book’s code. Once we figured out that we wouldn’t have a lot of trouble handling the memory, we switched back to C and modified her code! 
 
-                                                                Description of message
+                                                           Description of message
 For active users, only 3 would be allowed online at once. Anymore and there would be a FAILURE message. Once the users registered, they would be able to interact with each other if they were in the same contact list. Users also had the freedom to pass the following commands to the server: 
 1.	register <contact-name> <IP-address> <port> : This is a command a user could pass to the server to register their info like IP address and port. If the total number of users is 
    less than  3, the return message would output SUCCESS. If there are already 3 users, the return message would output FAILURE. 
@@ -24,9 +24,9 @@ For active users, only 3 would be allowed online at once. Anymore and there woul
 9.	im-complete <contact-list-name> <contact-name>: This command tells the server that the messaging has been completed. This command should pair with a corresponding im-start by
    the same named contact. If that is the case, then SUCCESS is returned. Else it is FAILURE that is returned.
 
-                                                                Milestone Testing
+                                                           Milestone Testing
 We tested out commands with hard code. Basically, we found a case where it would have to return FAILURE and another case where it would return SUCCESS. We then applied it to every command and ensured that it was working correctly! 
 
-                                                                Full Project Testing:
+                                                           Full Project Testing:
 There was no need to retest the Milestone progress since it was already doing what it was supposed to do. But to test the full thing, we created a state (a state variable) to lock the different servers & clients when the im-start command is initiated. This is would run in a loop until the im-complete command with the appropriate arguments where passed. The server would return SUCCESS if no errors happened and everything ran smoothly. FAILURE would be returned if either an incorrect command and arguments were passed or the loop stopped without the im-complete command. After both halves were complete(Milestone and Full Project Testing) and tested separately, we combined them into a one testing-for-all testing method and ran it on our messaging app
 Time space Diagram
